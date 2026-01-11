@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQR Group of Institutions - Modern Prototype</title>
+    <style>
+        /* 1. RESET & BASICS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 2. HEADER & NAVIGATION */
+        header {
+            background: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky; /* Modern feature from Example #3 */
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #004d40; /* Dark Teal */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a.btn-apply {
+            background-color: #004d40;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+        }
+
+        /* 3. HERO SECTION with PARALLAX (Style #6) */
+        .hero {
+            /* Replace with your own image URL */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            height: 80vh; /* 80% of screen height */
+            background-attachment: fixed; /* This creates the PARALLAX effect */
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 4. CARDS SECTION (Replacing the Table) */
+        .courses-section {
+            padding: 4rem 10%;
+            text-align: center;
+        }
+
+        .courses-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #004d40;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive Grid */
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease; /* Hover animation */
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px); /* Move up on hover */
+        }
+
+        .card h3 {
+            color: #004d40;
+            margin-bottom: 10px;
+        }
+
+        .card .price {
+            font-size: 1.2rem;
+            color: #e65100; /* Orange accent */
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* 5. FOOTER */
+        footer {
+            background: #222;
+            color: white;
+            padding: 3rem 10%;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* MOBILE TWEAKS */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">PQR Group of Institutions</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#" class="btn-apply">Apply Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section (Parallax Style) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Shape Your Future With Us</h1>
+            <p>World-class education in Computer Applications, Business, and Commerce.</p>
+            <a href="#" style="background: #e65100; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Courses Section (Cards Style) -->
+    <section class="courses-section">
+        <h2>Our Courses</h2>
+        <div class="grid-container">
+
+            <!-- Card 1: BCA -->
+            <div class="card">
+                <h3>BCA</h3>
+                <p><strong>Bachelor of Computer Applications</strong></p>
+                <p>Learn programming, database management, and software engineering.</p>
+                <span class="price">₹35,000 / Year</span>
+            </div>
+
+            <!-- Card 2: BBA -->
+            <div class="card">
+                <h3>BBA</h3>
+                <p><strong>Bachelor of Business Administration</strong></p>
+                <p>Master the fundamentals of management, finance, and marketing.</p>
+                <span class="price">₹30,000 / Year</span>
+            </div>
+
+            <!-- Card 3: BCom -->
+            <div class="card">
+                <h3>BCom</h3>
+                <p><strong>Bachelor of Commerce</strong></p>
+                <p>Specialized training in accounting, economics, and taxation.</p>
+                <span class="price">₹25,000 / Year</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>PQR Group of Institutions</h3>
+        <p>No.45, III Main, ABC Layout, Bangalore</p>
+        <br>
+        <p>&copy; 2026 PQR Group. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
